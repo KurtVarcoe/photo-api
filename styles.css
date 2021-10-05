@@ -1,15 +1,36 @@
-/* .column:nth-child(1) {
-    background-color: red;
+
+.column {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    align-items: flex-start;
+    justify-content: space-around;
+    
 }
 
-.column:nth-child(2) {
-    background-color: blue;
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    margin: auto;
 }
 
-.column:nth-child(3) {
-    background-color: yellow;
+/* #column-one {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
 }
 
-.column:nth-child(4) {
-    background-color: green;
+#column-two {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+
+#column-three {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
 } */
