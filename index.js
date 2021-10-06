@@ -19,21 +19,21 @@ var searchForm = document.getElementById('search-form');
                columnTwo.innerHTML = '';
                columnThree.innerHTML = '';
                for (var i = 0; i < 30; i++) {
-                   var imageSource = imageData.photos[i].src.small;
+                   var imageSource = imageData.photos[i].src.original;
                    var imageTag = `<img src="${imageSource}">`
-                   if (i < 10) {
+                   if (i < 5) {
                        columnOne.innerHTML += imageTag;
                    } 
-                   else if (i >= 10 && i < 20) {
+                   else if (i >= 5 && i < 10) {
                        columnTwo.innerHTML += imageTag;
                    } 
-                   else if (i >= 20) {
+                   else if (i >= 10) {
                        columnThree.innerHTML += imageTag;
                    } 
                }
            }
        };
        var userInput = document.getElementById('search-bar').value;
-       xhttp.open("GET", `https://api.pexels.com/v1/search?query=trees&per_page=30`, true);
+       xhttp.open("GET", `https://api.pexels.com/v1/search?query=trees&per_page=15`, true);
        xhttp.setRequestHeader('Authorization', "563492ad6f917000010000015b4a0ac1e77c42fc8b9eae29d9c26f5a");
        xhttp.send();
