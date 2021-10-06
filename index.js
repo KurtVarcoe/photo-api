@@ -5,13 +5,14 @@ var searchForm = document.getElementById('search-form');
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var imageData = JSON.parse(xhttp.responseText);
-                console.log(imageData);
                 var columnOne = document.getElementById('column-one');
                 var columnTwo = document.getElementById('column-two');
                 var columnThree = document.getElementById('column-three');
+                // clear divs to remove previous images
                 columnOne.innerHTML = '';
                 columnTwo.innerHTML = '';
                 columnThree.innerHTML = '';
+                // populate the column divs with images
                 for (var i = 0; i < 15; i++) {
                     var imageSource = imageData.photos[i].src.original;
                     var imageTag = `<img src="${imageSource}">`
@@ -27,6 +28,7 @@ var searchForm = document.getElementById('search-form');
                 }
             }
         };
+        // link input in search bar to api get request
         var userInput = document.getElementById('search-bar').value;
         xhttp.open("GET", `https://api.pexels.com/v1/search?query=${userInput}&per_page=15`, true);
         xhttp.setRequestHeader('Authorization', "563492ad6f917000010000015b4a0ac1e77c42fc8b9eae29d9c26f5a");
