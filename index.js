@@ -4,14 +4,11 @@ var searchForm = document.getElementById('search-form');
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                //    document.getElementById("demo").innerHTML = xhttp.responseText;
                 var imageData = JSON.parse(xhttp.responseText);
                 console.log(imageData);
-                // var container = document.getElementById("demo");
                 var columnOne = document.getElementById('column-one');
                 var columnTwo = document.getElementById('column-two');
                 var columnThree = document.getElementById('column-three');
-                // container.innerHTML = '';
                 columnOne.innerHTML = '';
                 columnTwo.innerHTML = '';
                 columnThree.innerHTML = '';
